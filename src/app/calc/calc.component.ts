@@ -16,10 +16,6 @@ export class CalcComponent implements OnInit {
   ngOnInit() {
   }
 
-  sendValue(value: any) {
-    this.result += value;
-  }
-
   insertNumber(value: any) {
     if (this.result === '+' || this.result === '-' || this.result === '×' || this.result === '/' || this.result === this.error || this.result === '0') {
       this.result = value;
@@ -35,6 +31,11 @@ export class CalcComponent implements OnInit {
   }
 
   showResult() {
+    if (Number.isNaN(this.memoryResult)) {
+      this.result = this.error;
+      this.operator = '';
+      return;
+    }
     if (this.operator === '+') {
       this.memoryResult = Number(this.memoryResult) + Number(this.result);
     } else if (this.operator === '-') {

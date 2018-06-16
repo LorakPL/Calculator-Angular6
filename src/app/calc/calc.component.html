@@ -5,17 +5,14 @@
 -->
 <div class="body">
   <div class="container">
-    <p>
-      This component works exactly like the calculator you know. Click any number to start calculating!
-    </p>
     <div class="calculator">
       <div class="calculator__display">{{result}}</div>
 
       <div class="calculator__keys">
-        <button class="key--operator" (click)="arithmeticOperation('+')">+</button>
-        <button class="key--operator" (click)="arithmeticOperation('-')">-</button>
-        <button class="key--operator" (click)="arithmeticOperation('×')">&times;</button>
-        <button class="key--operator" (click)="arithmeticOperation('/')">÷</button>
+        <button (click)="arithmeticOperation('+')">+</button>
+        <button (click)="arithmeticOperation('-')">-</button>
+        <button (click)="arithmeticOperation('×')">&times;</button>
+        <button (click)="arithmeticOperation('/')">÷</button>
         <button (click)="insertNumber('7')">7</button>
         <button (click)="insertNumber('8')">8</button>
         <button (click)="insertNumber('9')">9</button>
